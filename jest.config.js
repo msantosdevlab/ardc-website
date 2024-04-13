@@ -14,5 +14,6 @@ module.exports = {
   modulePaths: ['<rootdir>/src'],
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)']
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+  reporters: [['github-actions', { silent: false }], 'summary']
 };

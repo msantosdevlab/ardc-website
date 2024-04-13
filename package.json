@@ -27,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
+    "test:ci": "jest --ci",
     "eject": "react-scripts eject",
     "lint": "eslint . --config ./.eslintrc.js",
     "lint:fix": "eslint . --config ./.eslintrc.js --fix",
