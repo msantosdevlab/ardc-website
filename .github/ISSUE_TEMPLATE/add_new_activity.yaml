@@ -28,6 +28,7 @@ body:
         - Workshop
         - Media
         - Evento
+        - Escola
       default: 0
     validations:
       required: true
