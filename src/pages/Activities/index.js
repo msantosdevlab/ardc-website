@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import PageLayout from 'components/PageLayout';
@@ -76,6 +76,20 @@ function Activities({ translation }) {
     })
     .sort((a, b) => sortByDesc(a, b, 'date'));
 
+   //  FILTERS 
+  let total = activitiesRefined && activitiesRefined.length;
+  let qtEvento = activitiesRefined && activitiesRefined.filter((item) => item.category.label === "evento").length;
+  let qtMedia = activitiesRefined && activitiesRefined.filter((item) => item.category.label === "media").length;
+  let qtWorkshop = activitiesRefined && activitiesRefined.filter((item) => item.category.label === "workshop").length;
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredEvents = selectedCategory ? activitiesRefined.filter((event) => event.category.label === selectedCategory) : activitiesRefined;
+
+
   return (
     <PageLayout
       customBanner={<ActivitiesFeaturesBanner t={translation} />}
@@ -83,8 +97,15 @@ function Activities({ translation }) {
       descriptionParagraphs={[translation('ActivitiesPage-Description')]}
       breadcrumbsData={breadcrumbs}>
       <Container fluid="md" className="">
+      <button onClick={() => handleCategoryClick('')} className={`${selectedCategory === '' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Todos <span>{total}</span> </button>
+        <button onClick={() => handleCategoryClick('evento')} className={`${selectedCategory === 'evento' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Evento <span>{qtEvento}</span>
+        </button>
+        <button  onClick={() => handleCategoryClick('media')}  className={`${selectedCategory === 'media' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Media <span>{qtMedia}</span>
+        </button>
+        <button onClick={() => handleCategoryClick('workshop')}  className={`${selectedCategory === 'workshop' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Workshop <span>{qtWorkshop}</span>
+        </button>
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
-          {activitiesRefined.map((item, key) => (
+          {filteredEvents.map((item, key) => (
             <Col key={key} className={'mt-4'}>
               <span className={'event-card-wrapper'}>
                 <EventCard item={item} key={item.id} />
