@@ -8,10 +8,28 @@ import iscap from '../../assets/events/iscap.png';
 import witSummit from '../../assets/events/women_in_tech_summit.png';
 import hacktober2023 from '../../assets/events/HacktoberFest2023.png';
 import hacktober2022 from '../../assets/events/HacktoberFest2022.png';
+import communityBrunch from '../../assets/events/communityBrunch.png';
 
 import Constants from 'constants';
 
 const Events = [
+  {
+    id: self.crypto.randomUUID(),
+    date: '2024-06-23',
+    title: 'Community Brunch',
+    subtitle: '',
+    // link: {
+    //   url: 'https://www.instagram.com/p/C4N2hDXhRJl/',
+    //   type: Constants.LinkType.ARTICLE
+    // },
+    image: communityBrunch,
+    alt: 'Community Brunch - oportunidade única para profissionais e aspirantes da tecnologia se conectarem e colaborarem',
+    description: 'O evento realizado na nova casa do nosso Community Partner, @42porto, reuniu a comunidade para \
+                  uma manhã de networking e partilha de conhecimentos. Durante o brunch, apresentámos o nosso novo projeto de \
+                  educação tecnológica para os mais jovens e houve troca de ideias, experiências e brainstorming de feedback. Foi uma \
+                  oportunidade única para profissionais e aspirantes da tecnologia se conectarem e colaborarem.',
+    category: Constants.Categories.EVENT
+  },
   {
     id: self.crypto.randomUUID(),
     date: '2022-03-26',
