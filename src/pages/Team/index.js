@@ -38,6 +38,7 @@ function Team({ translation }) {
         translation('TeamPage-Description-Line3')
       ]}
       breadcrumbsData={breadcrumbs}>
+      <h6 className="text-uppercase text-center mb-4">Stuff</h6>
       <Container>
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
           {founderTeam.map((item, key) => (
