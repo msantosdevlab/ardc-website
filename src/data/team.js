@@ -106,6 +106,7 @@ const TeamData = [
     roles: ['mentor', 'collaborator'],
     name: 'Beatriz Sabino',
     job: 'OutSystems Developer',
+    location: 'Lisboa',
     social: [
       { linkedin: 'https://www.linkedin.com/in/beatriz-sabino96/' },
       { outsystems: 'https://www.outsystems.com/profile/5kda2s3k2u' }
@@ -116,6 +117,7 @@ const TeamData = [
     id: 24,
     roles: ['mentor', 'collaborator'],
     name: 'Selmira Fernandes',
+    location: 'Braga',
     job: '',
     social: [{ linkedin: 'https://www.linkedin.com/in/selmirafernandes/' }],
     avatar: 'selmira.jpg'
@@ -125,6 +127,7 @@ const TeamData = [
     roles: ['mentor', 'collaborator'],
     name: 'Inês Calçôa',
     job: 'Software Developer',
+    location: 'Lisboa',
     social: [
       { linkedin: 'https://www.linkedin.com/in/inescalcoa/' },
       { github: 'https://github.com/iscc92' }

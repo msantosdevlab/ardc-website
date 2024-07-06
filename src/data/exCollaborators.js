@@ -1,4 +1,4 @@
-const OldData = [
+const ExCollaborators = [
   {
     name: 'José Amorim',
     social: [
@@ -71,4 +71,4 @@ const OldData = [
   }
 ];
 
-export default OldData;
+export default ExCollaborators;
