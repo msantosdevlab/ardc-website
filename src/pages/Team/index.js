@@ -1,9 +1,11 @@
 import React from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import PersonCard from 'components/PersonCard';
+import PersonText from 'components/PersonText';
 import PageLayout from 'components/PageLayout';
 import Constants from 'constants';
 import TeamData from 'data/team';
+import ExCollaborators from 'data/exCollaborators';
 import FeatureFlag from 'components/FeatureFlag';
 
 function Team({ translation }) {
@@ -38,7 +40,6 @@ function Team({ translation }) {
         translation('TeamPage-Description-Line3')
       ]}
       breadcrumbsData={breadcrumbs}>
-      <h6 className="text-uppercase text-center mb-4">Stuff</h6>
       <Container>
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
           {founderTeam.map((item, key) => (
@@ -61,6 +62,16 @@ function Team({ translation }) {
               <PersonCard key={'colaborar'} />
             </Col>
           </FeatureFlag>
+        </Row>
+      </Container>
+      <h6 className="text-uppercase text-center mb-4">Antigos Membros</h6>
+      <Container>
+        <Row className={'mt-4 mb-5'} xs={1} lg={4}>
+          {ExCollaborators.map((item, key) => (
+            <Col key={key} className={'mt-4'}>
+              <PersonText key={key} person={item} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </PageLayout>

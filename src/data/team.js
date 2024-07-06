@@ -3,8 +3,8 @@ const TeamData = [
     id: 1,
     roles: ['founder', 'admin', 'mentor'],
     name: 'Miriam Santos',
-    company: 'YData',
     job: 'Developer Advocate',
+    location: 'Coimbra',
     social: [
       { linkedin: 'https://www.linkedin.com/in/miriamseoanesantos/' },
       { github: 'https://github.com/miriamspsantos' },
@@ -17,8 +17,8 @@ const TeamData = [
     id: 2,
     roles: ['admin', 'mentor'],
     name: 'Ricardo Pereira',
-    company: 'Univ. de Coimbra',
     job: 'Machine Learning Researcher',
+    location: 'Coimbra',
     social: [{ linkedin: 'https://www.linkedin.com/in/ricardo-dc-pereira' }],
     avatar: 'ricardo.png'
   },
@@ -26,8 +26,8 @@ const TeamData = [
     id: 4,
     roles: ['admin', 'mentor'],
     name: 'Bárbara Amorim',
-    company: 'i3S UPorto',
     job: 'Software Engineer',
+    location: 'Porto',
     social: [{ linkedin: 'https://www.linkedin.com/in/barbaramorim7' }],
     avatar: 'barbara.jpeg'
   },
@@ -35,8 +35,8 @@ const TeamData = [
     id: 6,
     roles: ['admin', 'mentor'],
     name: 'Inês Martins',
-    company: 'SWORD Health',
     job: 'Application Security Engineer',
+    location: 'Porto',
     social: [
       { linkedin: 'https://www.linkedin.com/in/ines-af-martins/' },
       { github: 'https://github.com/inesmartins' }
@@ -47,8 +47,8 @@ const TeamData = [
     id: 7,
     roles: ['admin', 'mentor'],
     name: 'Isabel Costa',
-    company: 'Deliveroo',
     job: 'Software Engineer',
+    location: 'Londres',
     social: [
       { linkedin: 'https://www.linkedin.com/in/isabelcmdcosta/' },
       { github: 'https://github.com/isabelcosta' }
@@ -59,8 +59,8 @@ const TeamData = [
     id: 13,
     roles: ['mentor', 'collaborator'],
     name: 'Catarina Silva',
-    company: 'University of Coimbra ',
     job: 'Researcher',
+    location: 'Coimbra',
     social: [
       { linkedin: 'https://www.linkedin.com/in/catarina-ns-silva/' },
       { github: 'https://github.com/CatarinaNSSilva' }
@@ -71,8 +71,8 @@ const TeamData = [
     id: 17,
     roles: ['mentor', 'collaborator'],
     name: 'Inês de Matos',
-    company: 'Web Summit',
     job: 'Software Engineer',
+    location: 'Lisboa',
     social: [
       { linkedin: 'https://www.linkedin.com/in/inesdematos/' },
       { github: 'https://github.com/toothlesspanda' }
@@ -83,8 +83,8 @@ const TeamData = [
     id: 20,
     roles: ['mentor', 'collaborator'],
     name: 'Inês Silvestre',
-    company: 'LastPass',
     job: 'Talent Acquisition Manager',
+    location: 'Lisboa',
     social: [{ linkedin: 'https://www.linkedin.com/in/inespsilvestre/' }],
     avatar: 'ines-silvestre.jpg'
   },
@@ -92,8 +92,8 @@ const TeamData = [
     id: 22,
     roles: ['mentor', 'collaborator'],
     name: 'Nuno Reis',
-    company: 'Nuno Cubal Reis, Unipessoal Lda.',
     job: 'Outsystems MVP',
+    location: 'Porto',
     social: [
       { linkedin: 'https://www.linkedin.com/in/nunocubal/' },
       { other: 'https://www.nunoreis.pt/' },
@@ -105,7 +105,6 @@ const TeamData = [
     id: 23,
     roles: ['mentor', 'collaborator'],
     name: 'Beatriz Sabino',
-    company: 'Near Partner',
     job: 'OutSystems Developer',
     social: [
       { linkedin: 'https://www.linkedin.com/in/beatriz-sabino96/' },
@@ -117,7 +116,6 @@ const TeamData = [
     id: 24,
     roles: ['mentor', 'collaborator'],
     name: 'Selmira Fernandes',
-    company: '',
     job: '',
     social: [{ linkedin: 'https://www.linkedin.com/in/selmirafernandes/' }],
     avatar: 'selmira.jpg'
@@ -126,7 +124,6 @@ const TeamData = [
     id: 25,
     roles: ['mentor', 'collaborator'],
     name: 'Inês Calçôa',
-    company: 'Volkswagen Group Services',
     job: 'Software Developer',
     social: [
       { linkedin: 'https://www.linkedin.com/in/inescalcoa/' },
@@ -138,8 +135,8 @@ const TeamData = [
     id: 26,
     roles: ['mentor', 'collaborator'],
     name: 'Cristiane Fidelix',
-    company: '',
     job: 'IT Consultant - Cybersecurity Specialist',
+    location: 'Lisboa',
     social: [
       { linkedin: 'https://www.linkedin.com/in/cristianefidelix/' },
       { instagram: 'https://www.instagram.com/cristianefidelix.live' }
@@ -150,8 +147,8 @@ const TeamData = [
     id: 27,
     roles: ['mentor', 'collaborator'],
     name: 'Teresa Alves',
-    company: 'Cloudflare',
     job: 'Systems Engineer',
+    location: 'Lisboa',
     social: [
       { linkedin: 'https://www.linkedin.com/in/teresalves/' },
       { github: 'https://github.com/teresalves' }
@@ -162,8 +159,8 @@ const TeamData = [
     id: 28,
     roles: ['mentor', 'collaborator'],
     name: 'Gustavo Rodrigues',
-    company: 'KWAN',
     job: 'Full Stack Developer',
+    location: 'Barreiro',
     social: [
       { linkedin: 'https://www.linkedin.com/in/gustavocrodrigues/' },
       { github: 'https://github.com/gustavorodrigues19' }
