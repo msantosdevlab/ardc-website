@@ -84,7 +84,7 @@ const TeamData = [
     roles: ['mentor', 'collaborator'],
     name: 'Inês Silvestre',
     job: 'Talent Acquisition Manager',
-    location: 'Lisboa',
+    location: 'Vila Real',
     social: [{ linkedin: 'https://www.linkedin.com/in/inespsilvestre/' }],
     avatar: 'ines-silvestre.jpg'
   },
@@ -139,7 +139,7 @@ const TeamData = [
     roles: ['mentor', 'collaborator'],
     name: 'Cristiane Fidelix',
     job: 'IT Consultant - Cybersecurity Specialist',
-    location: 'Lisboa',
+    location: 'Brasil',
     social: [
       { linkedin: 'https://www.linkedin.com/in/cristianefidelix/' },
       { instagram: 'https://www.instagram.com/cristianefidelix.live' }
@@ -163,7 +163,7 @@ const TeamData = [
     roles: ['mentor', 'collaborator'],
     name: 'Gustavo Rodrigues',
     job: 'Full Stack Developer',
-    location: 'Barreiro',
+    location: 'Lisboa',
     social: [
       { linkedin: 'https://www.linkedin.com/in/gustavocrodrigues/' },
       { github: 'https://github.com/gustavorodrigues19' }
