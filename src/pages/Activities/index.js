@@ -6,7 +6,7 @@ import OrganizationFeature from 'components/OrganizationFeature';
 import EventCard from 'components/EventCard';
 
 import Constants from 'constants';
-import { sortByDesc } from 'utils';
+import { sortByDesc, capitalize } from 'utils';
 
 import projectoEducacao from '../../assets/projeto_educacao.png';
 import inclusaoDigital from '../../assets/inclusao_digital.png';
@@ -76,11 +76,13 @@ function Activities({ translation }) {
     })
     .sort((a, b) => sortByDesc(a, b, 'date'));
 
-   //  FILTERS 
-  let total = activitiesRefined && activitiesRefined.length;
-  let qtEvento = activitiesRefined && activitiesRefined.filter((item) => item.category.label === "evento").length;
-  let qtMedia = activitiesRefined && activitiesRefined.filter((item) => item.category.label === "media").length;
-  let qtWorkshop = activitiesRefined && activitiesRefined.filter((item) => item.category.label === "workshop").length;
+  const categories = Array.from(new Set(activities.map(item => item.category.label)));
+
+  const calculateCategoryTotal = (category) => {
+    return activitiesRefined && activitiesRefined.filter((item) => item.category.label === category).length;
+  };
+
+  const total = activitiesRefined && activitiesRefined.length;
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleCategoryClick = (category) => {
@@ -89,7 +91,6 @@ function Activities({ translation }) {
 
   const filteredEvents = selectedCategory ? activitiesRefined.filter((event) => event.category.label === selectedCategory) : activitiesRefined;
 
-
   return (
     <PageLayout
       customBanner={<ActivitiesFeaturesBanner t={translation} />}
@@ -97,13 +98,18 @@ function Activities({ translation }) {
       descriptionParagraphs={[translation('ActivitiesPage-Description')]}
       breadcrumbsData={breadcrumbs}>
       <Container fluid="md" className="">
-      <button onClick={() => handleCategoryClick('')} className={`${selectedCategory === '' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Todos <span>{total}</span> </button>
-        <button onClick={() => handleCategoryClick('evento')} className={`${selectedCategory === 'evento' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Evento <span>{qtEvento}</span>
+        <button onClick={() => handleCategoryClick('')} className={`${selectedCategory === '' ? 'activeTab' : 'inactiveTab'} rounded-pill`}>
+          Todos <span>{total}</span>
         </button>
-        <button  onClick={() => handleCategoryClick('media')}  className={`${selectedCategory === 'media' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Media <span>{qtMedia}</span>
-        </button>
-        <button onClick={() => handleCategoryClick('workshop')}  className={`${selectedCategory === 'workshop' ? 'activeTab' : 'inactiveTab'} rounded-pill`}> Workshop <span>{qtWorkshop}</span>
-        </button>
+        {categories.map((category, index) => (
+          <button 
+            key={index}
+            onClick={() => handleCategoryClick(category)} 
+            className={`${selectedCategory === category ? 'activeTab' : 'inactiveTab'} rounded-pill`}
+          >
+            {capitalize(category)} <span>{calculateCategoryTotal(category)}</span>
+          </button>
+        ))}
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
           {filteredEvents.map((item, key) => (
             <Col key={key} className={'mt-4'}>

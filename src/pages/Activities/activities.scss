@@ -8,30 +8,30 @@
   width: 80px;
 }
 
-.inactiveTab, .activeTab{
+.inactiveTab, .activeTab {
   padding: 6px 18px;
   text-decoration: none;
   margin-right: 15px;
 }
 
-.inactiveTab{
-  border: 1px solid #DEDEDE;
+.inactiveTab {
+  border: 1px solid $light-gray;
   background-color: transparent;
-  color: #000958;
+  color: $brand-color;
 }
 
-.activeTab{
-  background-color: #01C2A9;
-  color: #fff;
-  border: 1px solid #01C2A9;
+.activeTab {
+  background-color: $green;
+  color: $white;
+  border: 1px solid $green;
 }
 
 .activeTab > span, .inactiveTab > span {
   padding: 5px;
-  background-color: #000958;
+  background-color: $brand-color;
   border-radius: 50px;
   font-size: 10px;
-  color: #fff;
+  color: $white;
   line-height: 1.5;
   vertical-align: middle;
 }
