@@ -22,6 +22,9 @@ function PersonCard({ person = null }) {
   };
 
   const Person = () => {
+    const responsibilities = person.responsibilities ? `❓ ${person.responsibilities}` : '';
+    const location = person.location ? `📍 ${person.location}` : '';
+
     return (
       <div className="person-card">
         <div className="person-card__img">
@@ -31,6 +34,8 @@ function PersonCard({ person = null }) {
           <h5 className="person-card__name">{person.name}</h5>
           <div className="person-card__job">{person.job}</div>
           <div className="person-card__company">{person.company}</div>
+          <div className="person-card__location">{location}</div>
+          <div className="person-card__responsibilities">{responsibilities}</div>
           <div className="person-card__icons">
             {person.social.map((socialNetworkLink, index) => {
               let socialNetwork = Object.keys(socialNetworkLink)[0];
