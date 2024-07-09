@@ -6,7 +6,7 @@ const Categories = Object.freeze({
   EVENT: { label: 'evento', color: 'dark-blue' },
   WORKSHOP: { label: 'workshop', color: 'dark-blue' },
   MEDIA: { label: 'media', color: 'dark-blue' },
-  ESCOLAS: { label: 'escolas', color: 'dark-blue' }
+  EDUCAÇÃO: { label: 'educacao', color: 'dark-blue' }
 });
 
 const LinkType = Object.freeze({
