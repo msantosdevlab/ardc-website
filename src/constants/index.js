@@ -5,7 +5,8 @@ import FeatureFlags from './featureflags';
 const Categories = Object.freeze({
   EVENT: { label: 'evento', color: 'dark-blue' },
   WORKSHOP: { label: 'workshop', color: 'dark-blue' },
-  MEDIA: { label: 'media', color: 'dark-blue' }
+  MEDIA: { label: 'media', color: 'dark-blue' },
+  EDUCATION: { label: 'educação', color: 'dark-blue' }
 });
 
 const LinkType = Object.freeze({
