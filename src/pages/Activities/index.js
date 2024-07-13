@@ -108,7 +108,9 @@ function Activities({ translation }) {
         </button>
         {Object.values(Constants.Categories).map((category, index) => {
           const label = category.label;
-          return (
+          const categoryTotal = calculateCategoryTotal(label);
+
+          return categoryTotal ? (
             <button
               key={`categories-${index}`}
               onClick={() => handleCategoryClick(label)}
@@ -117,6 +119,8 @@ function Activities({ translation }) {
               } rounded-pill`}>
               {capitalize(label)} <span>{calculateCategoryTotal(label)}</span>
             </button>
+          ) : (
+            ''
           );
         })}
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
