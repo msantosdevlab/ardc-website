@@ -82,6 +82,31 @@
   // }
 }
 
+.person-card__responsibilities {
+  font-family: Roboto Mono;
+  font-size: 0.8rem;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  // text-decoration: underline;
+
+  //  @media (max-width: $md) {
+  //   text-decoration: none;
+  // }
+}
+
+.person-card__location {
+  font-family: Roboto Mono;
+  font-size: 0.8rem;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0em;
+
+  //  @media (max-width: $md) {
+  //   text-decoration: none;
+  // }
+}
+
 .person-card__icons {
   margin-top: auto;
   margin-bottom: 30px;
@@ -103,3 +128,4 @@
   //   display:none
   // }
 }
+
