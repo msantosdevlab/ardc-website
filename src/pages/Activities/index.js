@@ -16,7 +16,6 @@ import './activities.scss';
 
 import activities from 'data/activities';
 
-
 const ActivitiesFeaturesBanner = ({ t }) => (
   <>
     <Row>
@@ -76,7 +75,6 @@ function Activities({ translation }) {
       return x;
     })
     .sort((a, b) => sortByDesc(a, b, 'date'));
-
 
   const calculateCategoryTotal = (category) => {
     return (
