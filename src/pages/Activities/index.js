@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import PageLayout from 'components/PageLayout';
@@ -6,7 +6,7 @@ import OrganizationFeature from 'components/OrganizationFeature';
 import EventCard from 'components/EventCard';
 
 import Constants from 'constants';
-import { sortByDesc } from 'utils';
+import { sortByDesc, capitalize } from 'utils';
 
 import projectoEducacao from '../../assets/projeto_educacao.png';
 import inclusaoDigital from '../../assets/inclusao_digital.png';
@@ -76,6 +76,24 @@ function Activities({ translation }) {
     })
     .sort((a, b) => sortByDesc(a, b, 'date'));
 
+  const calculateCategoryTotal = (category) => {
+    return (
+      activitiesRefined &&
+      activitiesRefined.filter((item) => item.category.label === category).length
+    );
+  };
+
+  const total = activitiesRefined && activitiesRefined.length;
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredEvents = selectedCategory
+    ? activitiesRefined.filter((event) => event.category.label === selectedCategory)
+    : activitiesRefined;
+
   return (
     <PageLayout
       customBanner={<ActivitiesFeaturesBanner t={translation} />}
@@ -83,8 +101,26 @@ function Activities({ translation }) {
       descriptionParagraphs={[translation('ActivitiesPage-Description')]}
       breadcrumbsData={breadcrumbs}>
       <Container fluid="md" className="">
+        <button
+          onClick={() => handleCategoryClick('')}
+          className={`${selectedCategory === '' ? 'activeTab' : 'inactiveTab'} rounded-pill`}>
+          Todos <span>{total}</span>
+        </button>
+        {Object.values(Constants.Categories).map((category, index) => {
+          const label = category.label;
+          return (
+            <button
+              key={`categories-${index}`}
+              onClick={() => handleCategoryClick(label)}
+              className={`${
+                selectedCategory === label ? 'activeTab' : 'inactiveTab'
+              } rounded-pill`}>
+              {capitalize(label)} <span>{calculateCategoryTotal(label)}</span>
+            </button>
+          );
+        })}
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
-          {activitiesRefined.map((item, key) => (
+          {filteredEvents.map((item, key) => (
             <Col key={key} className={'mt-4'}>
               <span className={'event-card-wrapper'}>
                 <EventCard item={item} key={item.id} />
