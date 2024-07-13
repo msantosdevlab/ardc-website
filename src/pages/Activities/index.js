@@ -16,6 +16,7 @@ import './activities.scss';
 
 import activities from 'data/activities';
 
+
 const ActivitiesFeaturesBanner = ({ t }) => (
   <>
     <Row>
@@ -76,10 +77,12 @@ function Activities({ translation }) {
     })
     .sort((a, b) => sortByDesc(a, b, 'date'));
 
-  const categories = Array.from(new Set(activities.map(item => item.category.label)));
 
   const calculateCategoryTotal = (category) => {
-    return activitiesRefined && activitiesRefined.filter((item) => item.category.label === category).length;
+    return (
+      activitiesRefined &&
+      activitiesRefined.filter((item) => item.category.label === category).length
+    );
   };
 
   const total = activitiesRefined && activitiesRefined.length;
@@ -89,7 +92,9 @@ function Activities({ translation }) {
     setSelectedCategory(category);
   };
 
-  const filteredEvents = selectedCategory ? activitiesRefined.filter((event) => event.category.label === selectedCategory) : activitiesRefined;
+  const filteredEvents = selectedCategory
+    ? activitiesRefined.filter((event) => event.category.label === selectedCategory)
+    : activitiesRefined;
 
   return (
     <PageLayout
@@ -98,18 +103,24 @@ function Activities({ translation }) {
       descriptionParagraphs={[translation('ActivitiesPage-Description')]}
       breadcrumbsData={breadcrumbs}>
       <Container fluid="md" className="">
-        <button onClick={() => handleCategoryClick('')} className={`${selectedCategory === '' ? 'activeTab' : 'inactiveTab'} rounded-pill`}>
+        <button
+          onClick={() => handleCategoryClick('')}
+          className={`${selectedCategory === '' ? 'activeTab' : 'inactiveTab'} rounded-pill`}>
           Todos <span>{total}</span>
         </button>
-        {categories.map((category, index) => (
-          <button 
-            key={index}
-            onClick={() => handleCategoryClick(category)} 
-            className={`${selectedCategory === category ? 'activeTab' : 'inactiveTab'} rounded-pill`}
-          >
-            {capitalize(category)} <span>{calculateCategoryTotal(category)}</span>
-          </button>
-        ))}
+        {Object.values(Constants.Categories).map((category, index) => {
+          const label = category.label;
+          return (
+            <button
+              key={`categories-${index}`}
+              onClick={() => handleCategoryClick(label)}
+              className={`${
+                selectedCategory === label ? 'activeTab' : 'inactiveTab'
+              } rounded-pill`}>
+              {capitalize(label)} <span>{calculateCategoryTotal(label)}</span>
+            </button>
+          );
+        })}
         <Row className={'mt-4 mb-5'} xs={1} lg={4}>
           {filteredEvents.map((item, key) => (
             <Col key={key} className={'mt-4'}>
