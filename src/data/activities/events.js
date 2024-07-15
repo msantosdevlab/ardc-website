@@ -14,6 +14,23 @@ import Constants from 'constants';
 const Events = [
   {
     id: self.crypto.randomUUID(),
+    date: '2024-06-23',
+    title: 'Community Brunch',
+    subtitle: '',
+    // link: {
+    //   url: 'https://www.instagram.com/p/C4N2hDXhRJl/',
+    //   type: Constants.LinkType.ARTICLE
+    // },
+    image: communityBrunch,
+    alt: 'Community Brunch - oportunidade única para profissionais e aspirantes da tecnologia se conectarem e colaborarem',
+    description: 'O evento realizado na nova casa do nosso Community Partner, @42porto, reuniu a comunidade para \
+                  uma manhã de networking e partilha de conhecimentos. Durante o brunch, apresentámos o nosso novo projeto de \
+                  educação tecnológica para os mais jovens e houve troca de ideias, experiências e brainstorming de feedback. Foi uma \
+                  oportunidade única para profissionais e aspirantes da tecnologia se conectarem e colaborarem.',
+    category: Constants.Categories.EVENT
+  },
+  {
+    id: self.crypto.randomUUID(),
     date: '2022-03-26',
     title: 'Tech Community Get-Together',
     subtitle: '42 Lisboa',
